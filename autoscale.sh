@@ -67,7 +67,6 @@ if [ $DNS_QPS -ge $SCALE_UP_THRESHOLD ] && [ $CACHE_HIT_RATIO -lt "98" ]
      let TOTAL_QPS="$TOTAL_QPS + $i"
      done
 		
-#    declare -p QPS_ARRAY
      QPS_SUM=0
  
      for i in ${QPS_ARRAY[@]}	
@@ -75,7 +74,6 @@ if [ $DNS_QPS -ge $SCALE_UP_THRESHOLD ] && [ $CACHE_HIT_RATIO -lt "98" ]
      let QPS_SUM="QPS_SUM + $i"
      done
 		
-#     echo $QPS_SUM
 		
 if [ $(($QPS_SUM / 10)) -ge $SCALE_UP_THRESHOLD ] 
      then	
